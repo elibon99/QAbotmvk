@@ -5,14 +5,14 @@ const QaModel = require('../models/qa.js');
 
 //question: req.query.qs
 // get list of answers from db
-router.get('/qas', function(req, res, next){
+router.get('/qa', function(req, res, next){
     QaModel.find({}).then(function(qa){
     res.send(qa);
     });
 });
 
 // add new question to db
-router.post('/qas', function(req, res, next){
+router.post('/qa', function(req, res, next){
   QaModel.create(req.body).then(function(qa){
     res.send(qa);
   }).catch(next);
