@@ -3,10 +3,10 @@ const router = express.Router();
 const QaModel = require('../models/qa.js');
 
 
-
+//question: req.query.qs
 // get list of answers from db
 router.get('/qa', function(req, res, next){
-  QaModel.find({question: req.query.qs}).then(function(qa){
+  QaModel.find({}).then(function(qa){
     res.send(qa);
   })
 });
