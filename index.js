@@ -6,13 +6,13 @@ const mongoose = require('mongoose');
 // set up express app
 const qbotapp = express();
 
-// intlialize body parser middleware
-qbotapp.use(bodyParser.json());
 
 // connect to mongodb
 mongoose.connect('mongodb://qabotdb:ryd5jwE2bpnq4nzTafyV7zHwNqFwKsGet9EQjmZ5b8zvlfY59SlLX9BJO6aHfZi35paKR9mMIUzZc8e7V6YjIA%3D%3D@qabotdb.documents.azure.com:10255/mean-dev?ssl=true&sslverifycertificate=false');
 mongoose.Promise = global.Promise;
 
+// intlialize body parser middleware
+qbotapp.use(bodyParser.json());
 
 // initialize routes to be used by app
 qbotapp.use('/api',routes);
