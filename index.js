@@ -23,6 +23,6 @@ qbotapp.use(function(err,req,res,next){
 });
 
 // listen for requests
-qbotapp.listen(process.env.port || 4000,function(){
+qbotapp.listen(process.env.PORT || 4000,function(){
   console.log('now listening for requests');
 });
