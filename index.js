@@ -12,7 +12,7 @@ mongoose.connect('mongodb://qabotdb:ryd5jwE2bpnq4nzTafyV7zHwNqFwKsGet9EQjmZ5b8zv
 mongoose.Promise = global.Promise;
 
 // so that we can serve static files
-qbotpp.use(express.static('public'));
+qbotapp.use(express.static('public'));
 
 // intlialize body parser middleware
 qbotapp.use(bodyParser.json());
