@@ -1,0 +1,111 @@
+@charset "ISO-8859-1";
+
+#logo{
+
+border-radius: 50px;
+width: 800px;
+height: 300px;
+}
+
+div #logo{
+
+  margin-left: 19%;
+}
+
+#Searching{
+margin-top: 5%;
+
+}
+
+body{
+margin-left: 0px;
+  background-color: white;
+}
+
+
+.header{
+
+text-align: center;
+
+
+}
+form{
+text-align: center;
+}
+
+.searchBar{
+text-align:center;
+border-radius: 50px;
+width : 500px;
+height: 40px;
+margin-top: 50px;
+box-shadow:         3px 3px 3px 3px #ccc;
+
+border: 2px solid #494949 !important;
+
+}
+.button {
+
+  box-shadow:         3px 3px 3px 3px #ccc;
+  border-radius: 50px;
+margin-left: 50px;
+width: 100px;
+height: 40px;
+color: #494949 !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #ffffff;
+border: 2px solid #494949 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+}
+
+.button:hover {
+color: #ffffff !important;
+background: #28CC9E;
+border-color: #28CC9E !important;
+transition: all 0.4s ease 0s;
+}
+
+
+.results{
+margin-top: 100px;
+border-radius: 25px;
+border: 5px solid lightgrey;
+padding-left: 20px;
+
+}
+
+a{
+color: white;
+text-decoration: none;
+}
+
+footer{
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+	background-color: #196B69;
+	text-align: center;
+  width: 100%;
+  color: white;
+}
+footer div{
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+footer div p {
+    display: inline;
+}
+
+.space{
+  word-spacing: 50px;
+}
+hr{
+
+  display: none;
+}
