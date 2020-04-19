@@ -19,5 +19,4 @@ router.post('/qa', function(req, res, next){
 
 });
 
-
 module.exports = router;
