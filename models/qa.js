@@ -29,16 +29,10 @@ QaModel.createMapping((err, mapping) => {
 });
 */
 
-
-QaModel.synchronize();
-
-
-module.exports = QaModel;
-
 /*
 var newQa = new QaModel({
-    question: 'Does ICA sell bananas?',
-    answer: 'Yes they do'
+    question: 'Question',
+    answer: 'Answer'
 });
 
 newQa.save((err) => {
@@ -48,3 +42,6 @@ newQa.save((err) => {
     });
 })
 */
+
+QaModel.synchronize();
+module.exports = QaModel;

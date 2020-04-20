@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const qbotapp = express();
 
 // connect to mongodb
-mongoose.connect('mongodb+srv://jolbe:f00disnice@dbqa-vkpac.azure.mongodb.net/dbqa?retryWrites=true&w=majority'); 
+mongoose.connect('mongodb+srv://admin:mQLA2Yu44gj!6b@dbqa-vkpac.azure.mongodb.net/dbqa?retryWrites=true&w=majority'); 
 mongoose.Promise = global.Promise;
 
 // so that we can serve static files
