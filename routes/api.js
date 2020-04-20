@@ -3,6 +3,38 @@ const router = express.Router();
 const QaModel = require('../models/qa.js');
 
 
+QaModel.createMapping(function(err, mapping){
+  if (err){
+    console.log('error creating mapping');
+    console.log(err);
+  } else{
+    console.log('Mapping created');
+    console.log(mapping);
+  }
+});
+
+var stream = QaModel.synchronize();
+var count = 0;
+
+stream.on('data', function() {
+  count++;
+});
+
+stream.on('close', function() {
+  console.log("Indexed " + count + " documents"); 
+});
+
+stream.on('error', function() {
+  console.log(err);
+});
+
+router.get('/search', function(req, res) {
+  QaModel.search({query_string: {query: req.body.q}}, function(err, results) {
+    res.send(results);
+  });
+});
+
+
 //question: req.query.qs
 // get list of answers from db
 router.get('/qa', function(req, res, next){

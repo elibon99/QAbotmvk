@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosastic = require('mongoosastic');
 const Schema = mongoose.Schema;
 
 // Create qa Schema & model
@@ -12,6 +13,13 @@ const QaSchema = new Schema({
     type: String,
   }
 });
+
+QaSchema.plugin(mongoosastic, {
+  hosts: [
+    'localhost:9200'
+  ]
+});
+ 
 
 const QaModel = mongoose.model('qa', QaSchema);
 
