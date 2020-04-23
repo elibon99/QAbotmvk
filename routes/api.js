@@ -28,34 +28,6 @@ stream.on('error', function() {
   console.log(err);
 });
 
-/*
-router.get('/search', function(req, res) {
-  QaModel.search({query_string: {query: "Question"}}, function(err, results) {
-    res.send(results);
-  });
-});
-*/
-
- /*
-router.get('/search', function(req, res) {
-    QaModel.search({
-        query: {
-            multi_match: {
-                query: req.body.q,
-                fields: [
-                    question,
-                    answer
-                ],
-                fuzziness: 1
-            }
-        }
-    }, function(err, results) {
-        res.send(results);
-    });
-});
-
-*/
-
 router.get('/search', function (req, res, next) {
     console.log("keyword: " + req.query.q);
     QaModel.search({
@@ -73,15 +45,6 @@ router.get('/search', function (req, res, next) {
             return hit._source;
         });
         res.send(data);
-    });
-});
-
-//question: req.query.q
-// get list of answers from db
-router.get('/qa', function(req, res, next) {
-    QaModel.find({question: req.query.q}).then(function(qa){
-        console.log(qa);
-        res.send(qa);
     });
 });
 
