@@ -29,7 +29,6 @@ stream.on('error', function() {
 });
 
 router.get('/search', function (req, res, next) {
-    console.log("keyword: " + req.query.q);
     QaModel.search({
         multi_match: {
           query: req.query.q,
