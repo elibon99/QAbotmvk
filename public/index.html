@@ -48,11 +48,12 @@ function change(){
 
     render: function(){
       var results = this.state.results;
+
       results = results.map(function(qa,index){
         return(
           <li key={index}>
 
-          <span className="answer">{qa.answer}</span> </li>
+          <span className="answer">Question: {qa.question}<br/>Answer: {qa.answer}</span> </li>
 
 
         );
@@ -81,7 +82,7 @@ function change(){
       e.preventDefault();
       var KeyWord = this.refs.KeyWord.value;
 
-      var url = '/api/qa?qs=' + KeyWord;
+      var url = '/api/search?q=' + KeyWord;
       fetch(url).then(function(data){
         return data.json();
       }).then( json => {

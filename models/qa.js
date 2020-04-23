@@ -24,12 +24,6 @@ QaSchema.plugin(mongoosastic, {
 const QaModel = mongoose.model('qa', QaSchema);
 
 /*
-QaModel.createMapping((err, mapping) => {
-    console.log('mapping created');
-});
-*/
-
-/*
 var newQa = new QaModel({
     question: 'Question',
     answer: 'Answer'
@@ -43,5 +37,4 @@ newQa.save((err) => {
 })
 */
 
-QaModel.synchronize();
 module.exports = QaModel;
