@@ -32,11 +32,14 @@ router.get('/search', function (req, res, next) {
     QaModel.search({
         multi_match: {
           query: req.query.q,
+          type: "best_fields",
           fields: [
-              "question",
+              "question^3",
               "answer"
           ],
-          fuzziness: 1
+          operator: "and"
+
+
         }
     }, function (err, results) {
         if (err) return next(err);

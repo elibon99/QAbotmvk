@@ -6,8 +6,11 @@ const mongoose = require('mongoose');
 // set up express app
 const qbotapp = express();
 
+
+// Joels MongoDB: mongodb+srv://admin:mQLA2Yu44gj!6b@dbqa-vkpac.azure.mongodb.net/dbqa?retryWrites=true&w=majority
+//mongodb://qabotdb:ryd5jwE2bpnq4nzTafyV7zHwNqFwKsGet9EQjmZ5b8zvlfY59SlLX9BJO6aHfZi35paKR9mMIUzZc8e7V6YjIA%3D%3D@qabotdb.documents.azure.com:10255/mean-dev?ssl=true&sslverifycertificate=false
 // connect to mongodb
-mongoose.connect('mongodb+srv://admin:mQLA2Yu44gj!6b@dbqa-vkpac.azure.mongodb.net/dbqa?retryWrites=true&w=majority'); 
+mongoose.connect('mongodb://qabotdb:ryd5jwE2bpnq4nzTafyV7zHwNqFwKsGet9EQjmZ5b8zvlfY59SlLX9BJO6aHfZi35paKR9mMIUzZc8e7V6YjIA%3D%3D@qabotdb.documents.azure.com:10255/mean-dev?ssl=true&sslverifycertificate=false'); 
 mongoose.Promise = global.Promise;
 
 // so that we can serve static files

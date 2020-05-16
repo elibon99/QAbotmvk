@@ -12,10 +12,16 @@ const QaSchema = new Schema({
   },
   answer:{
     type: String
+  },
+  open:{
+    type: Boolean,
+    default: false
   }
 });
 
-var esClient = new elasticsearch.Client({host: 'https://elastic:OOCT69FlSgFnYBWnJIqQFwAc@deb18c8e4bcb4af9b37c740eb9f3d0f6.westeurope.azure.elastic-cloud.com:9243'});
+var esClient = new elasticsearch.Client({
+  host: 'https://elastic:foQdH4R3B80l5TdM0cDqt1lE@8a3f4f748ed14d71b5226a29a9f48008.westeurope.azure.elastic-cloud.com:9243'
+});
 
 QaSchema.plugin(mongoosastic, {
   esClient: esClient
