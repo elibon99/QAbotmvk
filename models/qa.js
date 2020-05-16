@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mongoosastic = require('mongoosastic');
 const elasticsearch = require('elasticsearch');
+
 const Schema = mongoose.Schema;
 
 // Create qa Schema & model
@@ -26,6 +27,7 @@ var esClient = new elasticsearch.Client({
 QaSchema.plugin(mongoosastic, {
   esClient: esClient
 })
+
 
 const QaModel = mongoose.model('qa', QaSchema);
 

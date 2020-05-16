@@ -21,12 +21,15 @@ stream.on('data', function() {
 });
 
 stream.on('close', function() {
+
   console.log("Indexed " + count + " documents");
+
 });
 
 stream.on('error', function() {
   console.log(err);
 });
+
 
 router.get('/search', function (req, res, next) {
     QaModel.search({
@@ -47,6 +50,7 @@ router.get('/search', function (req, res, next) {
             return hit._source;
         });
         res.send(data);
+
     });
 });
 
