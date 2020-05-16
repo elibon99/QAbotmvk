@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +14,13 @@
     "elasticsearch": "^16.7.1",
     "express": "^4.17.1",
     "mongoosastic": "^4.6.0",
-    "mongoose": "^5.8.11"
+
+    "mongoose": "^5.9.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }

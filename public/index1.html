@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart search</title>
+  <link rel="icon" href="logo_transparent.png" >
+  <link id ="pagestyle" rel="stylesheet"  href="style1.css">
+
+
+
+</head>
+<body>
+  <div class="header">
+
+
+
+<script>
+function change(){
+  document.getElementById("pagestyle").href = 'style1.css';
+}
+
+</script>
+
+  </div>
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+
+
+
+  <div id = "SearchAndResults">
+
+  </div>
+
+
+
+  <script type="text/babel">
+
+  var Search = React.createClass({
+    getInitialState: function(){
+      return({
+        results: []
+      });
+    },
+
+
+
+    render: function(){
+      var results = this.state.results;
+
+      results = results.map(function(qa,index){
+        return(
+          <li key={index}>
+
+          <span className="answer">Question: {qa.question}<br/>Answer: {qa.answer}</span> </li>
+
+
+
+
+        );
+      });
+
+      return(
+
+        <div id="Searching">
+    <img src="search.png" alt="logo" id ="logo" onclick="change()"/>
+        <form  id="search" onSubmit={this.handleSubmit} >
+        <input type ="text" ref="KeyWord"  className ="searchBar"  placeholder="Write your question here!" />
+        <input id="button" onclick="swapStyleSheet('style2.css');" className="button" type="submit" value="Search!" />
+
+        </form>
+
+<hr></hr>
+        <ul>{results}</ul>
+
+        </div>
+      );
+
+
+    },
+
+    handleSubmit: function(e){
+      e.preventDefault();
+      var KeyWord = this.refs.KeyWord.value;
+
+      var url = '/api/search?q=' + KeyWord;
+      fetch(url).then(function(data){
+        return data.json();
+      }).then( json => {
+        this.setState({
+          results: json
+        });
+        console.log(json);
+      });
+
+
+          document.getElementById("pagestyle").href = 'style2.css';
+
+
+
+    }
+  });
+
+
+  ReactDOM.render(<Search />, document.getElementById('SearchAndResults'));
+
+
+
+
+  </script>
+
+
+  <footer>
+    <div>
+
+      <p style="text-indent: 100px;">All rights reserved &copy;</p>.
+      <a href="" style="text-indent: 100px;">License</a>.
+      <a href="" style="text-indent: 100px;">About us</a>
+
+    </div>
+  </footer>
+
+
+
+
+
+</body>
+</html>

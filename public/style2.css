@@ -11,7 +11,7 @@ margin-left: 20px;
 
 body{
 margin-left: 0px;
-background-color: white;
+background-color: #EEE;
 }
 
 
@@ -71,13 +71,38 @@ hr {
 }
 
 
-.results{
-margin-top: 100px;
-border-radius: 25px;
-border: 5px solid lightgrey;
-padding-left: 20px;
+.qa-results{
+width: 800px;
+margin: 15px;
+padding: 15px;
+}
+
+.qa-question{
+  position: relative;
+  font-family: "Century Gothic";
+  font-size: 15px;
+  font-weight: bold;
+  padding-right: 80px;
+}
+
+.qa-answer{
+  font-family: "Century Gothic";
+  font-size: 15px;
 
 }
+
+
+
+div.qa-results > div{
+  margin: 15px;
+  padding: 15px;
+  background-color: #FFF;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+
+}
+
+
 
 a{
 color: white;
@@ -85,7 +110,7 @@ text-decoration: none;
 }
 
 footer{
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   height: 40px;
 	background-color: #196B69;

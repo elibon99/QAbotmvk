@@ -47,12 +47,26 @@ function change(){
 
 
     render: function(){
+
       var results = this.state.results;
+
       results = results.map(function(qa,index){
         return(
-          <li key={index}>
+          <div
+            clasName={"qa " + (qa.open ? 'open' : '')}
+            key={index}
 
-          <span className="answer">{qa.answer}</span> </li>
+
+          >
+            <div className="qa-question">
+              {qa.question}
+            </div>
+
+            <div className="qa-answer">
+              {qa.answer}
+            </div>
+
+          </div>
 
 
         );
@@ -69,7 +83,9 @@ function change(){
         </form>
 
 <hr></hr>
-        <ul>{results}</ul>
+        <div className = "qa-results">
+          {results}
+        </div>
 
         </div>
       );
@@ -81,7 +97,7 @@ function change(){
       e.preventDefault();
       var KeyWord = this.refs.KeyWord.value;
 
-      var url = '/api/qa?qs=' + KeyWord;
+      var url = '/api/search?q=' + KeyWord;
       fetch(url).then(function(data){
         return data.json();
       }).then( json => {

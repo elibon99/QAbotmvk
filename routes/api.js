@@ -21,34 +21,44 @@ stream.on('data', function() {
 });
 
 stream.on('close', function() {
-  console.log("Indexed " + count + " documents"); 
+
+  console.log("Indexed " + count + " documents");
+
 });
 
 stream.on('error', function() {
   console.log(err);
 });
 
-router.get('/search', function(req, res) {
-  QaModel.search({query_string: {query: req.body.q}}, function(err, results) {
-    res.send(results);
-  });
-});
+
+router.get('/search', function (req, res, next) {
+    QaModel.search({
+        multi_match: {
+          query: req.query.q,
+          type: "best_fields",
+          fields: [
+              "question^3",
+              "answer"
+          ],
+          operator: "and"
 
 
-//question: req.query.qs
-// get list of answers from db
-router.get('/qa', function(req, res, next){
-    QaModel.find({question: req.query.qs}).then(function(qa){
-    res.send(qa);
+        }
+    }, function (err, results) {
+        if (err) return next(err);
+        var data = results.hits.hits.map(function(hit) {
+            return hit._source;
+        });
+        res.send(data);
+
     });
 });
 
 // add new question to db
-router.post('/qa', function(req, res, next){
+router.post('/qa', function(req, res, next) {
   QaModel.create(req.body).then(function(qa){
     res.send(qa);
   }).catch(next);
-
 });
 
 
