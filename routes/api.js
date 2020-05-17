@@ -42,6 +42,7 @@ router.get('/search', function (req, res, next) {
           ],
           operator: "and",
           fuzziness: 1
+          
 
 
         }
