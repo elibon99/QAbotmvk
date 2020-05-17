@@ -40,7 +40,8 @@ router.get('/search', function (req, res, next) {
               "question^3",
               "answer"
           ],
-          operator: "and"
+          operator: "and",
+          fuzziness: 1
 
 
         }
